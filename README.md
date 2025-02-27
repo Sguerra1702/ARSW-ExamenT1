@@ -3,7 +3,8 @@
 ### Arquitecturas de Software - ARSW
 ## Parcial 1 - Paralelismo - Hilos - Caso BlackListSearch
 ## Desarrollado por Santiago Guerra Penagos
-
+### Importante
+El Desarrollo del bono esta implementado en la rama bono de este repositorio, esto con el fin de evitar fallos de compilación del ejercicio en general por si el bono está mal implementado, para revisar el bono, se debe cambiar a la rama main/bono desde la consola.
 ### Descripción
   Este es un ejercicio de programación con hilos en Java, que permite su aplicación a un caso concreto.
   
