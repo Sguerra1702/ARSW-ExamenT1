@@ -3,8 +3,6 @@
 ### Arquitecturas de Software - ARSW
 ## Parcial 1 - Paralelismo - Hilos - Caso BlackListSearch
 ## Desarrollado por Santiago Guerra Penagos
-### Importante
-El Desarrollo del bono esta implementado en la rama bono de este repositorio, esto con el fin de evitar fallos de compilación del ejercicio en general por si el bono está mal implementado, para revisar el bono, se debe cambiar a la rama main/bono desde la consola.
 ### Descripción
   Este es un ejercicio de programación con hilos en Java, que permite su aplicación a un caso concreto.
   
@@ -68,3 +66,9 @@ Para 'refactorizar' este código, y hacer que explote la capacidad multi-núcleo
 **Bono**
 
 Haga que también imprima el número TOTAL de registros revisados en las listas de todos los hilos, es decir, imprimir el número de listas negras revisadas VS. el número de listas negras total(80,000). Se debe garantizar que dicha información sea verídica bajo el nuevo esquema de procesamiento en paralelo planteado.
+### Desarrollo
+Se creó la variable ```totalCheckedLists``` en la clase BlackListValidatorThread y a medida que se revisaban los registros este valor aumentaba, al final, se enviaba el valor y a modo de Log se indicaba el numero de listas revisadas:
+![](/img/7.png)
+
+Resultado:
+![](/img/8.png)

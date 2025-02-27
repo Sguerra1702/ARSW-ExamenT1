@@ -18,6 +18,7 @@ public class HostBlackListsValidator {
         int segmentSize = registeredServersCount / N;
         BlackListValidatorThread[] threads = new BlackListValidatorThread[N];
         BlackListValidatorThread.occurrencesCount = 0;
+        BlackListValidatorThread.totalCheckedLists = 0;
 
         for (int i = 0; i < N; i++) {
             int startRange = i * segmentSize;
@@ -40,7 +41,7 @@ public class HostBlackListsValidator {
             skds.reportAsTrustworthy(ipaddress);
         }
 
-        LOG.log(Level.INFO, "Checked Black Lists:{0} of {1}", new Object[]{registeredServersCount, skds.getRegisteredServersCount()});
+        LOG.log(Level.INFO, "Checked Black Lists:{0} of {1}", new Object[]{BlackListValidatorThread.totalCheckedLists, skds.getRegisteredServersCount()});
 
         return blackListOccurrences;
     }

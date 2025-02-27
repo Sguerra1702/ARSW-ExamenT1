@@ -1,9 +1,10 @@
 package edu.eci.arsw.blacklistvalidator;
 
-import edu.eci.arsw.spamkeywordsdatasource.HostBlacklistsDataSourceFacade;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import edu.eci.arsw.spamkeywordsdatasource.HostBlacklistsDataSourceFacade;
 
 public class BlackListValidatorThread extends Thread {
     private int startRange;
@@ -13,6 +14,7 @@ public class BlackListValidatorThread extends Thread {
     private List<Integer> blackListOccurrences;
     private static final int BLACK_LIST_ALARM_COUNT = 5;
     public static int occurrencesCount = 0;
+    public static int totalCheckedLists= 0;
     private static final Object lock = new Object();
     private static final Logger LOG = Logger.getLogger(BlackListValidatorThread.class.getName());
 
@@ -45,7 +47,10 @@ public class BlackListValidatorThread extends Thread {
                     }
                 }
             } else {
-                
+            // Conteo de listas revisadas   
+            }
+            synchronized (lock) {
+                totalCheckedLists++;
             }
         }
     }
